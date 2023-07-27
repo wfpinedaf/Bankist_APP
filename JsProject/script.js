@@ -72,3 +72,28 @@ const displayMovements = function (movements) {
   });
 };
 displayMovements(account1.movements);
+
+// let JuliaData = [3, 5, 2, 12, 7];
+// let KateData = [9, 16, 6, 8, 3, 1];
+
+// console.log(JuliaData.splice(-2));
+
+// JuliaData = JuliaData.concat(KateData);
+
+// JuliaData.forEach(function (jul, i) {
+//   const age = jul > 2 ? `adult` : `puppy`;
+//   console.log(`The dog is ${age} and it's ${jul} years old`);
+// });
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
